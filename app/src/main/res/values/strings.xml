@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppPerguntas</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_cadastro_de_conteudos">CadastroDeConteudos</string>
+    <string name="title_activity_cadastro_de_perguntas">CadastroDePerguntasActivity</string>
+    <string name="title_activity_visualizacao_recycler">VisualizacaoRecyclerActivity</string>
+    <string name="title_activity_vizualizacao_recycler">VizualizacaoRecyclerActivity</string>
+</resources>

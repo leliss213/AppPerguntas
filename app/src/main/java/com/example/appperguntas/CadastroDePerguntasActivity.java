@@ -3,9 +3,6 @@ package com.example.appperguntas;
 import android.icu.text.IDNA;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -50,10 +47,10 @@ public class CadastroDePerguntasActivity extends AppCompatActivity {
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
-        String[] conteudo = new String[informacoesApp.getLstConteudos().size()+1];
+        String[] conteudo = new String[informacoesApp.getLstConteudos().size() + 1];
         conteudo[0] = "Selecionar";
-        for (int x=0; x < informacoesApp.getLstConteudos().size(); x++){
-                conteudo[x+1] = informacoesApp.getLstConteudos().get(x).getNomeConteudo();
+        for (int x = 0; x < informacoesApp.getLstConteudos().size(); x++) {
+            conteudo[x + 1] = informacoesApp.getLstConteudos().get(x).getNomeConteudo();
         }
         spCadastroPerguntasConteudo.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, conteudo));
 
@@ -67,7 +64,7 @@ public class CadastroDePerguntasActivity extends AppCompatActivity {
                                 if (!etCadastroDePerguntasOpcaoD.equals("")) {
                                     if (!etCadastroDePerguntasOpcaoE.equals("")) {
                                         if (rgCadastroDePerguntasGrupo.getCheckedRadioButtonId() != -1) {
-                                            if(spCadastroPerguntasConteudo.getSelectedItemPosition()>0){
+                                            if (spCadastroPerguntasConteudo.getSelectedItemPosition() > 0) {
                                                 char opcaoCorreta;
                                                 if (rbCadastroDePerguntasOpcaoA.isChecked()) {
                                                     opcaoCorreta = 'A';
@@ -81,11 +78,11 @@ public class CadastroDePerguntasActivity extends AppCompatActivity {
                                                     opcaoCorreta = 'E';
                                                 }
                                                 //Criando o objeto da classe pergunta para armazenar na lista
-                                                Pergunta perg = new Pergunta(etCadastroDePerguntasEnunciado.getText().toString(),etCadastroDePerguntasOpcaoA.getText().toString(),etCadastroDePerguntasOpcaoB.getText().toString(),etCadastroDePerguntasOpcaoC.getText().toString(),etCadastroDePerguntasOpcaoD.getText().toString(),etCadastroDePerguntasOpcaoE.getText().toString(),opcaoCorreta,informacoesApp.getLstConteudos().get(spCadastroPerguntasConteudo.getSelectedItemPosition()-1));
+                                                Pergunta perg = new Pergunta(etCadastroDePerguntasEnunciado.getText().toString(), etCadastroDePerguntasOpcaoA.getText().toString(), etCadastroDePerguntasOpcaoB.getText().toString(), etCadastroDePerguntasOpcaoC.getText().toString(), etCadastroDePerguntasOpcaoD.getText().toString(), etCadastroDePerguntasOpcaoE.getText().toString(), opcaoCorreta, informacoesApp.getLstConteudos().get(spCadastroPerguntasConteudo.getSelectedItemPosition() - 1));
                                                 informacoesApp.getLstPerguntas().add(perg);
                                                 Toast.makeText(CadastroDePerguntasActivity.this, "Pergunta Cadastrada com sucesso", Toast.LENGTH_SHORT).show();
 
-                                            }else{
+                                            } else {
                                                 Toast.makeText(CadastroDePerguntasActivity.this, "Selecione o conteúdo da questão", Toast.LENGTH_SHORT).show();
                                                 spCadastroPerguntasConteudo.requestFocus();
                                             }

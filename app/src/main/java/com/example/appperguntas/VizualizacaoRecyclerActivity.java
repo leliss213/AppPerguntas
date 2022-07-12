@@ -2,9 +2,6 @@ package com.example.appperguntas;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -21,6 +18,7 @@ public class VizualizacaoRecyclerActivity extends AppCompatActivity {
     PerguntaAdapter perguntaAdapter;
 
     InformacoesApp informacoesApp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +31,7 @@ public class VizualizacaoRecyclerActivity extends AppCompatActivity {
 
         informacoesApp = (InformacoesApp) getApplicationContext();
 
-        if(informacoesApp.getLstPerguntas()!= null){
+        if (informacoesApp.getLstPerguntas() != null) {
             perguntaAdapter = new PerguntaAdapter(informacoesApp.getLstConteudos(), informacoesApp.getLstPerguntas(), trataCliqueItem);
             rvVizualizaPerguntas.setLayoutManager(new LinearLayoutManager(VizualizacaoRecyclerActivity.this));
             rvVizualizaPerguntas.setItemAnimator(new DefaultItemAnimator());
@@ -46,7 +44,7 @@ public class VizualizacaoRecyclerActivity extends AppCompatActivity {
         public void onClickPergunta(View view, int position) {
             Pergunta perg = informacoesApp.getLstPerguntas().get(position);
             Conteudo cont = informacoesApp.getLstConteudos().get(position);
-            Toast.makeText(informacoesApp, "Pergunta: "+ perg.getEnunciado()+"Conteudo: "+cont.getNomeConteudo(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(informacoesApp, "Pergunta: " + perg.getEnunciado() + "Conteudo: " + cont.getNomeConteudo(), Toast.LENGTH_SHORT).show();
         }
     };
 

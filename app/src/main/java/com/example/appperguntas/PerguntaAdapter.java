@@ -9,12 +9,11 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class PerguntaAdapter extends RecyclerView.Adapter<PerguntaAdapter.MyViewHolder> {
-    private ArrayList<Conteudo>lstConteudos;
-    private ArrayList<Pergunta>lstPerguntas;
+    private ArrayList<Conteudo> lstConteudos;
+    private ArrayList<Pergunta> lstPerguntas;
     private PerguntaOnClickListener perguntaOnClickListener;
 
 
@@ -41,7 +40,7 @@ public class PerguntaAdapter extends RecyclerView.Adapter<PerguntaAdapter.MyView
         /* CUIDADO: .setText() precisa sempre de String. Se for outro tipo de dado, deve ser feita a conversão com o String.valueOf() */
 
         // clique no item do cliente
-        if (perguntaOnClickListener!= null) {
+        if (perguntaOnClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -69,6 +68,7 @@ public class PerguntaAdapter extends RecyclerView.Adapter<PerguntaAdapter.MyView
 
         }
     }
+
     public interface PerguntaOnClickListener {
         public void onClickPergunta(View view, int position);
     }

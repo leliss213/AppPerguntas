@@ -5,13 +5,11 @@ import android.app.Application;
 import java.util.ArrayList;
 
 public class InformacoesApp extends Application {
-    private ArrayList<Conteudo>lstConteudos;
-    private ArrayList<Pergunta>lstPerguntas;
+    private ArrayList<Conteudo> lstConteudos;
+    private ArrayList<Pergunta> lstPerguntas;
 
 
     //Criando a lista de dificuldades para possíveis acessos futuros
-
-
 
 
     public ArrayList<Conteudo> getLstConteudos() {

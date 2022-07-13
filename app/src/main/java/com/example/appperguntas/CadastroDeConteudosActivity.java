@@ -34,9 +34,8 @@ public class CadastroDeConteudosActivity extends AppCompatActivity {
         informacoesApp = (InformacoesApp) getApplicationContext();
         String[] tipoConteudo = new String[4];
         tipoConteudo[0] = "Selecionar";
-        tipoConteudo[1] = "Fácil";
-        tipoConteudo[2] = "Médio";
-        tipoConteudo[3] = "Difícil";
+        tipoConteudo[1] = "Orgânica";
+        tipoConteudo[2] = "Inorgânica";
 
         spCadastroConteudosTipo.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, tipoConteudo));
 

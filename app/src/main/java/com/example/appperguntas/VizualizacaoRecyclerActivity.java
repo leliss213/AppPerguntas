@@ -1,5 +1,6 @@
 package com.example.appperguntas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,8 @@ public class VizualizacaoRecyclerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         rvVizualizaPerguntas = findViewById(R.id.rvVizualizaPerguntas);
 
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
@@ -37,6 +40,7 @@ public class VizualizacaoRecyclerActivity extends AppCompatActivity {
             rvVizualizaPerguntas.setItemAnimator(new DefaultItemAnimator());
             rvVizualizaPerguntas.setAdapter(perguntaAdapter);
         }
+
     }
 
     PerguntaAdapter.PerguntaOnClickListener trataCliqueItem = new PerguntaAdapter.PerguntaOnClickListener() {
@@ -44,8 +48,15 @@ public class VizualizacaoRecyclerActivity extends AppCompatActivity {
         public void onClickPergunta(View view, int position) {
             Pergunta perg = informacoesApp.getLstPerguntas().get(position);
             Conteudo cont = informacoesApp.getLstConteudos().get(position);
-            Toast.makeText(informacoesApp, "Pergunta: " + perg.getEnunciado() + "Conteudo: " + cont.getNomeConteudo(), Toast.LENGTH_SHORT).show();
+            Intent it = new Intent(VizualizacaoRecyclerActivity.this, VisualizacaoDetalhadaActivity.class);
+            it.putExtra("pergunta", perg);
+            startActivity(it);
+            //Toast.makeText(informacoesApp, "Pergunta: " + perg.getEnunciado() + "Conteudo: " + cont.getNomeConteudo(), Toast.LENGTH_SHORT).show();
         }
     };
+
+
+
+
 
 }

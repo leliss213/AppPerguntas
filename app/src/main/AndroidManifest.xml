@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".VisualizacaoDetalhadaActivity"
+            android:label="@string/title_activity_visualizacao_detalhada"
+            android:parentActivityName=".VizualizacaoRecyclerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.appperguntas.VizualizacaoRecyclerActivity" />
+        </activity>
+        <activity
             android:name=".VizualizacaoRecyclerActivity"
             android:label="@string/title_activity_vizualizacao_recycler"
             android:parentActivityName=".MainActivity"

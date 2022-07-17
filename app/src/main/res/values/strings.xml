@@ -5,4 +5,5 @@
     <string name="title_activity_cadastro_de_perguntas">CadastroDePerguntasActivity</string>
     <string name="title_activity_visualizacao_recycler">VisualizacaoRecyclerActivity</string>
     <string name="title_activity_vizualizacao_recycler">VizualizacaoRecyclerActivity</string>
+    <string name="title_activity_visualizacao_detalhada">VisualizacaoDetalhadaActivity</string>
 </resources>

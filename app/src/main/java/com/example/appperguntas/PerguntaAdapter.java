@@ -35,8 +35,7 @@ public class PerguntaAdapter extends RecyclerView.Adapter<PerguntaAdapter.MyView
     public void onBindViewHolder(final PerguntaAdapter.MyViewHolder holder, final int position) {
         Pergunta perg = lstPerguntas.get(position);
         holder.tvPergunta.setText(perg.getEnunciado());
-        Conteudo cont = lstConteudos.get(position);
-        holder.tvConteudoPergunta.setText(cont.getNomeConteudo());
+        holder.tvConteudoPergunta.setText(perg.getConteudo().getNomeConteudo());
         /* CUIDADO: .setText() precisa sempre de String. Se for outro tipo de dado, deve ser feita a conversão com o String.valueOf() */
 
         // clique no item do cliente

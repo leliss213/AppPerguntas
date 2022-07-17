@@ -32,7 +32,7 @@ public class CadastroDeConteudosActivity extends AppCompatActivity {
         spCadastroConteudosTipo = (Spinner) findViewById(R.id.spCadastroConteudosTipo);
 
         informacoesApp = (InformacoesApp) getApplicationContext();
-        String[] tipoConteudo = new String[4];
+        String[] tipoConteudo = new String[3];
         tipoConteudo[0] = "Selecionar";
         tipoConteudo[1] = "Orgânica";
         tipoConteudo[2] = "Inorgânica";

@@ -34,7 +34,7 @@ public class VisualizacaoDetalhadaActivity extends AppCompatActivity {
           Pergunta perg = (Pergunta) it.getSerializableExtra("pergunta");
 
             tvVisualizaPergunta.setText(perg.getEnunciado());
-            //tvVisualizaConteudo.setText(perg.getConteudo());
+            tvVisualizaConteudo.setText(perg.getConteudo().getNomeConteudo());
         }
     }
 

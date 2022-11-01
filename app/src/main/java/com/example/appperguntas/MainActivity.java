@@ -14,7 +14,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     //Crianda as variáveis para os elementos da tela
-    Button bMainCadastarConteudo, bMainCadastrarPergunta, bMainVisualizarPergunta;
+    Button bMainCadastarConteudo, bMainCadastrarPergunta, bMainVisualizarPergunta, bMainDeletaBanco;
+    ControladorBanco crud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         bMainCadastarConteudo = (Button) findViewById(R.id.bMainCadastroConteudo);
         bMainCadastrarPergunta = (Button) findViewById(R.id.bMainCadastroPergunta);
         bMainVisualizarPergunta = (Button) findViewById(R.id.bMainVisualizacaoPergunta);
+        bMainDeletaBanco = (Button) findViewById(R.id.bMainDeletaBanco);
+        crud = new ControladorBanco(MainActivity.this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bMainCadastarConteudo.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        bMainDeletaBanco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crud.DeletaBanco();
+            }
+        });
+
 
     }
 

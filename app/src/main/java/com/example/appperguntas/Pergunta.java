@@ -24,6 +24,22 @@ public class Pergunta implements Serializable {
         this.conteudo = conteudo;
     }
 
+    public Pergunta(int idPergunta) {
+        this.idPergunta = idPergunta;
+    }
+
+    public Pergunta(int idPergunta, String enunciado, String opcaoA, String opcaoB, String opcaoC, String opcaoD, String opcaoE, char opcaoCorreta, Conteudo conteudo) {
+        this.idPergunta = idPergunta;
+        this.enunciado = enunciado;
+        this.opcaoA = opcaoA;
+        this.opcaoB = opcaoB;
+        this.opcaoC = opcaoC;
+        this.opcaoD = opcaoD;
+        this.opcaoE = opcaoE;
+        this.opcaoCorreta = opcaoCorreta;
+        this.conteudo = conteudo;
+    }
+
     public int getIdPergunta() {
         return idPergunta;
     }

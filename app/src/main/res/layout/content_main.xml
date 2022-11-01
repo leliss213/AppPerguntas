@@ -25,5 +25,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/bMainVisualizacaoPergunta"
         android:text="Visualizar perguntas"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bMainDeletaBanco"
+        android:text="DeletaBanco"/>
 
 </LinearLayout>

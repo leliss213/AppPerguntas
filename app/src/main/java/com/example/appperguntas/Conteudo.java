@@ -12,6 +12,16 @@ public class Conteudo implements Serializable {
         this.nomeConteudo = nomeConteudo;
     }
 
+    public Conteudo(int idConteudo) {
+        this.idConteudo = idConteudo;
+    }
+
+    public Conteudo(int idConteudo, int tipoConteudo, String nomeConteudo) {
+        this.idConteudo = idConteudo;
+        this.tipoConteudo = tipoConteudo;
+        this.nomeConteudo = nomeConteudo;
+    }
+
     public int getIdConteudo() {
         return idConteudo;
     }

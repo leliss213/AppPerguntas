@@ -19,6 +19,7 @@ public class CadastroDeConteudosActivity extends AppCompatActivity {
     EditText etCadastroDeConteudosNome;
     Spinner spCadastroConteudosTipo;
     InformacoesApp informacoesApp;
+    ControladorBanco crud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class CadastroDeConteudosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_de_conteudos);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        crud = new ControladorBanco (CadastroDeConteudosActivity.this);
         bCadastroDeConteudosSalvar = (Button) findViewById(R.id.bCadastroConteudoSalvar);
         bCadastroDeConteudosLimpar = (Button) findViewById(R.id.bCadastroConteudoLimpar);
         etCadastroDeConteudosNome = (EditText) findViewById(R.id.etCadastroDeConteudosNome);
@@ -45,15 +47,17 @@ public class CadastroDeConteudosActivity extends AppCompatActivity {
                 if (!etCadastroDeConteudosNome.equals("")) {
                     if (spCadastroConteudosTipo.getSelectedItemPosition() > 0) {
                         Conteudo cont = new Conteudo(spCadastroConteudosTipo.getSelectedItemPosition(), etCadastroDeConteudosNome.getText().toString());
-                        informacoesApp.getLstConteudos().add(cont);
-                        Toast.makeText(CadastroDeConteudosActivity.this, "Conteúdo cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                         String resultado = crud.CadastraConteudo(cont);
+                        Toast.makeText(CadastroDeConteudosActivity.this, resultado, Toast.LENGTH_SHORT).show();
+                        limpaCampos();
                     } else {
-                        Toast.makeText(CadastroDeConteudosActivity.this, "Selecione o tipo do conteúdo", Toast.LENGTH_SHORT).show();
                         spCadastroConteudosTipo.requestFocus();
+                        Toast.makeText(CadastroDeConteudosActivity.this, "Selecione o tipo do conteúdo", Toast.LENGTH_SHORT).show();
+
                     }
                 } else {
-                    Toast.makeText(CadastroDeConteudosActivity.this, "Insira o nome do conteúdo", Toast.LENGTH_SHORT).show();
                     etCadastroDeConteudosNome.requestFocus();
+                    etCadastroDeConteudosNome.setError("Insira o nome do conteúdo");
                 }
             }
         });
